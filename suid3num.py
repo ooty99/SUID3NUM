@@ -243,45 +243,6 @@ def doSomethingPlis(listOfSuidBins):
 	return(binsInGTFO, defaultSuidBins, customSuidBins)
 
 
-def note():
-	print(white + "[" + red + "-" + white + "] " + magenta + "Note")
-	print(white + barLine)
-	print(blue  + "If you see any FP in the output, please report it to make the script better! :)")	
-	print(white + barLine + "\n")
-
-def exploitThisShit(bins):
-	commands 	= []
-
-	for suidBins in bins:
-		_bin 	= suidBins.split("/")[::-1][0]
-		
-		if _bin in suidExploitation:
-			_results 	= suidBins + " " + suidExploitation[_bin]
-			commands.append(_results)
-
-	if len(argv) == 2:
-		if argv[1] == '-e':
-			print(white + "[" + magenta + "$" + white + "] " + white + "Auto Exploiting SUID bit binaries !!!")
-			print(white + barLine)
-
-			for _commands in commands:
-				print(magenta + "\n[#] Executing Command .. ")
-				print(cyan + "[~] " + _commands + "\n" + white)
-				sleep(0.5)
-				system(_commands)
-				sleep(0.5)
-
-			print(white + barLine + "\n\n")
-
-	else:
-		print(white + "[" + green + "$" + white + "] " + white + "Please try the command(s) below to exploit SUID bin(s) found !!!")
-		print(white + barLine)
-
-		for _commands in commands:
-			print("[~] " + _commands)
-
-		print(white + barLine + "\n\n")	
-
 def main():
 	print(banner)
 	try:
